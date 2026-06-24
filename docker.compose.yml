@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  api:
+  api-psgames:
     build:
       context: ./api
       dockerfile: Dockerfile
@@ -12,7 +12,7 @@ services:
       - NODE_ENV=production
     restart: always
 
-  frontend:
+  frontend-psgames:
     build:
       context: ./frontend
       dockerfile: Dockerfile
