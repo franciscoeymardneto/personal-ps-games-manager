@@ -21,4 +21,4 @@ services:
       - "4400:80"
     restart: always
     depends_on:
-      - api
+      - api-psgames
