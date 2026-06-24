@@ -76,7 +76,7 @@ export default function App() {
 
   // metadados (gêneros p/ o dropdown, total p/ a sidebar) — uma vez
   useEffect(() => {
-    fetch("/api/meta")
+    fetch("https://api.psgames.evolussistemas.com.br/api/meta")
       .then((r) => (r.ok ? r.json() : null))
       .then((m) => m && setMeta(m))
       .catch(() => {});
@@ -102,8 +102,8 @@ export default function App() {
 
       const request =
         ids === null
-          ? fetch(`/api/games?${toQuery(common)}`, { signal: ctrl.signal })
-          : fetch(`/api/games/query`, {
+          ? fetch(`https://api.psgames.evolussistemas.com.br/api/games?${toQuery(common)}`, { signal: ctrl.signal })
+          : fetch(`https://api.psgames.evolussistemas.com.br/api/games/query`, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ ...common, ids }),
@@ -218,7 +218,7 @@ export default function App() {
           {error && (
             <EmptyState
               title="A API não respondeu"
-              hint="Suba o servidor (ps-api: npm start) e confira o proxy /api no vite.config.js. Depois recarregue."
+              hint="Suba o servidor (ps-api: npm start) e confira o proxy https://api.psgames.evolussistemas.com.br/api no vite.config.js. Depois recarregue."
             />
           )}
 
